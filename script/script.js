@@ -1,34 +1,37 @@
+'use strict'
+
 //Переменные
-let num = 266219;
-num1 = num%10,
-num2 = num/10,
-num3 = num2/10,
-num4 = num3/10,
-num5 = num4/10,
-num6 = num5/10;
+let lang = prompt('Введите ru иди en'),
+namePerson = prompt('Ввеите имя'),
+daysArray = [{ru : 'Понедельник, вторник, среда, четверг, пятница, суббота, воскресенье',
+en: 'Monday, thuesday, wensday, thursday, friday, saturday, sunday'}];
 
-num2 = Math.floor (num2%10);
-num3 = Math.floor (num3%10);
-num4 = Math.floor (num4%10);
-num5 = Math.floor (num5%10);
-num6 = Math.floor (num6%10);
 
-let multiplication = num1*num2*num3*num4*num5*num6,
-extent = multiplication**3,
-extent1 = Math.floor(extent/100000000);
+//if else и выводы в консоль
+if (lang == 'ru'){
+    console.log('Понедельник, вторник, среда, четверг, пятница, суббота, воскресенье');
+}else if (lang == 'en'){
+    console.log('Monday, thuesday, wensday, thursday, friday, saturday, sunday');
+}else{
+    console.log('Я же сказал пиши ru или en незачем отсебятину придумывать =Ъ');
+}
+
+//switch
+
+switch(lang){
+    case 'ru':
+        console.log('Понедельник, вторник, среда, четверг, пятница, суббота, воскресенье');
+        break;
+    case 'en':
+        console.log('Monday, thuesday, wensday, thursday, friday, saturday, sunday');
+        break;
+    default:
+        console.log("Неверно");
+}
 
 //Вывод в консоль
-console.log(num1);
-console.log(num2);
-console.log(num3);
-console.log(num4);
-console.log(num5);
-console.log(num6);
-//console.log(extent);
-console.log(extent1);
+console.log(daysArray[0][lang]);
 
-//Вывод на экран
-
-document.write(extent1);
-
-
+//Тернарные операторы
+let result = namePerson == 'Артем' ? 'Директор' : namePerson == 'Максим' ? 'Преподаватель' : 'Студент';
+console.log(result);
