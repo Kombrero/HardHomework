@@ -1,19 +1,29 @@
 'use strict'
-let randomName = prompt('Напишите что-нибудь');
 
-function chooseName(prompt){
-    prompt = prompt.trim();
-    if (prompt !== String(prompt)){
-        console.log('Данное значение не явяется строкой');
-    }else if(prompt.length > 30){
-        prompt = prompt.slice(0,30)
-        prompt += '...'
-        console.log(prompt);
-    }else{
-        console.log(prompt);
-    }
+let arr = [245, 300, 463, 256, 111, 905, 594];
+
+arr.sort(function(a, b) {
+    return a-b;
+});
+for (let i = 0; i < 7; i++) {
+    arr[i] = arr[i] + '';
     
-    return;
-};
+   if(arr[i][0] == 2 || arr[i][0] == 4 ){
+    console.log(arr[i]);
+   }
+}
+// 2 часть дз
 
-chooseName(randomName);
+let n = 100,
+    flag = 1;
+    console.log(1);
+    
+for (let i = 2; i <= n; i++) {
+  let flag=1;
+  for (let j = 2; (j <= i/2)&&(flag==1); j++) {
+     if (i%j==0) {
+         flag=0}
+    }
+  
+ if (flag==1) {console.log(i);}
+}
