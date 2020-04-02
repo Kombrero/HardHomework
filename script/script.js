@@ -16,7 +16,7 @@ for (let i = 0; i < 7; i++) {
 
 let n = 100,
     flag = 1;
-    console.log(1);
+    console.log(flag);
     
 for (let i = 2; i <= n; i++) {
   let flag=1;
