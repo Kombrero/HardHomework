@@ -1,29 +1,40 @@
-'use strict'
+// let day;
 
-let arr = [245, 300, 463, 256, 111, 905, 594];
+// function getWeekDay(date){
+//     let date = new Date();
+//     let week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', '<i>'+'Суббота'+'</i>', '<i>'+'Воскресенье'+'</i>'];
+//     day = date.getDate();
 
-arr.sort(function(a, b) {
-    return a-b;
-});
-for (let i = 0; i < 7; i++) {
-    arr[i] = arr[i] + '';
+//     return week[day];
+// }
+// let date = new Date();
+// getWeekDay(date);
+// console.log('getWeekDay(date);: ', getWeekDay(date));
+
+// console.log(day);
+// for (i = 0; i < week.length; i++) {
     
-   if(arr[i][0] == 2 || arr[i][0] == 4 ){
-    console.log(arr[i]);
-   }
+//     document.write(week[i] + '<br>' );
+// }
+let week = ['<i>' + 'Воскресенье' + '</i>', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', '<i>' + 'Суббота' + '</i>'];
+
+function getWeekDay(date) {
+    date = date || new Date();
+    
+    let day = date.getDay();
+
+    return week[day];
 }
-// 2 часть дз
 
-let n = 100,
-    flag = 1;
-    console.log(flag);
-    
-for (let i = 2; i <= n; i++) {
-  let flag=1;
-  for (let j = 2; (j <= i/2)&&(flag==1); j++) {
-     if (i%j==0) {
-         flag=0}
+let date = new Date();
+
+for (i = 0; i < week.length; i++) {
+    if (week[i] === getWeekDay(date)){
+        document.write('<b>' + week[i] + '</b>' + '<br>')
+    }else{
+        document.write(week[i] + '<br>' );
     }
-  
- if (flag==1) {console.log(i);}
-}
+        
+    }
+
+
